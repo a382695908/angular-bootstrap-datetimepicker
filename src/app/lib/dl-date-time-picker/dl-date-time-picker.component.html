@@ -1,3 +1,28 @@
-<p>
-  dl-date-time-picker works!
-</p>
+<div class="{{_currentView}}-view text-center">
+  <div class="row align-items-center no-gutters">
+    <div class="col label"
+         [ngClass]="{'up-button': _currentView !== 'year'}"
+         (click)="_onUpClick($event)"
+    >
+      {{_model.upLabel}}<ng-container *ngTemplateOutlet="_currentView === 'year' ? '' : defaultUpButton"></ng-container>
+    </div>
+  </div>
+  <div class="row align-items-center no-gutters">
+    <div class="col label" *ngFor="let label of _model.labels">{{label}}</div>
+  </div>
+  <div *ngFor="let row of _model.rows"
+       class="row align-items-center no-gutters"
+  >
+    <div *ngFor="let date of row.dates"
+         class="col date-button {{_currentView}}"
+         [ngClass]="date.classes"
+         (click)="_onDateClick($event)"
+    >
+      {{date.display}}
+    </div>
+  </div>
+</div>
+
+<ng-template #defaultUpButton>
+  &nbsp;<span class="oi oi-chevron-top"></span>
+</ng-template>

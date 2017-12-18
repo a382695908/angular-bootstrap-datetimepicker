@@ -5,10 +5,13 @@ describe('angular-bootstrap-datetimepicker App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+  describe('english', () => {
+    it('should set model when selecting January 1, 2017 at midnight', () => {
+      page.dtpEn.getTimeElement(new Date('2017-01-01').getTime()).click();
+      return expect(page.selectedDateEn.getText()).toEqual('2017-Nov');
+    });
   });
 });

@@ -81,7 +81,12 @@ If for some reason the default Moment settings will not work, you can [customize
 
 ### Formatting the date in an input box
 
-### modelType
+### Inputs
+
+#### modelType
+
+### Events
+
 
 ## Callback functions
 

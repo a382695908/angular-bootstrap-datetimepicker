@@ -1,0 +1,38 @@
+:host {
+  user-select: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.up-button,
+.left-button,
+.right-button,
+.date-button {
+  padding: 5px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: hsla(0, 0%, 0%, 0.87);
+}
+
+.up-button:hover,
+.left-button:hover,
+.right-button:hover,
+.date-button:hover {
+  background: hsla(0, 0%, 0%, 0.04);
+}
+
+.past,
+.future {
+  color: #999;
+}
+
+.current,
+.current:hover,
+.current.disabled,
+.current.disabled:hover {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 999px;
+}
